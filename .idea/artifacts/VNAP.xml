@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="VNAP">
+    <output-path>$PROJECT_DIR$/../Server/plugins_mod</output-path>
+    <root id="archive" name="VNAP.jar">
+      <element id="module-output" name="Auth" />
+      <element id="extracted-dir" path="$USER_HOME$/Downloads/mariadb-java-client-2.0.3.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../json-simple-master/jsonsimple.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
