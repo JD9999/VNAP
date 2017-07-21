@@ -7,18 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="51c0bfd6-eda4-4b8a-8f84-29ee41b62c9e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/Rainbow.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/mariadb-java-client-2.0.3.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/json_simple.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/jsonsimple.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/VNAP.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/VNAP.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Rainbow.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Rainbow.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/mariadb_java_client_2_0_3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/mariadb_java_client_2_0_3.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Auth.iml" afterPath="$PROJECT_DIR$/Auth.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/VNAP/Login.java" afterPath="$PROJECT_DIR$/src/VNAP/Login.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/VNAP/MyPlugin.java" afterPath="$PROJECT_DIR$/src/VNAP/MyPlugin.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/VNAP/Register.java" afterPath="$PROJECT_DIR$/src/VNAP/Register.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -43,14 +33,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Connect.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Connect.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/VNAP/Connect.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="594">
-              <caret line="75" column="26" lean-forward="true" selection-start-line="75" selection-start-column="26" selection-end-line="75" selection-end-column="26" />
+              <caret line="75" column="26" lean-forward="false" selection-start-line="75" selection-start-column="26" selection-end-line="75" selection-end-column="26" />
               <folding>
                 <element signature="e#0#2968#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="558">
+              <caret line="31" column="188" lean-forward="false" selection-start-line="31" selection-start-column="188" selection-end-line="31" selection-end-column="188" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -81,7 +81,7 @@
         <entry file="file://$PROJECT_DIR$/src/VNAP/Register.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="378">
-              <caret line="39" column="5" lean-forward="true" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
+              <caret line="39" column="5" lean-forward="false" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -116,6 +116,7 @@
         <option value="$PROJECT_DIR$/src/VNAP/Login.java" />
         <option value="$PROJECT_DIR$/src/VNAP/Register.java" />
         <option value="$PROJECT_DIR$/src/VNAP/MyPlugin.java" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -155,17 +156,6 @@
               <item name="VNAP" type="b2602c69:ProjectViewProjectNode" />
               <item name="VNAP" type="462c0819:PsiDirectoryNode" />
               <item name="libs" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="VNAP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="VNAP" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="VNAP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="VNAP" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="VNAP" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -446,6 +436,9 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.md" />
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -781,7 +774,7 @@
     <entry file="file://$PROJECT_DIR$/src/VNAP/Register.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
-          <caret line="39" column="5" lean-forward="true" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
+          <caret line="39" column="5" lean-forward="false" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -802,10 +795,18 @@
     <entry file="file://$PROJECT_DIR$/src/VNAP/Connect.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="594">
-          <caret line="75" column="26" lean-forward="true" selection-start-line="75" selection-start-column="26" selection-end-line="75" selection-end-column="26" />
+          <caret line="75" column="26" lean-forward="false" selection-start-line="75" selection-start-column="26" selection-end-line="75" selection-end-column="26" />
           <folding>
             <element signature="e#0#2968#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="558">
+          <caret line="31" column="188" lean-forward="false" selection-start-line="31" selection-start-column="188" selection-end-line="31" selection-end-column="188" />
+          <folding />
         </state>
       </provider>
     </entry>
