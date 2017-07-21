@@ -2,7 +2,7 @@
 **V**en **N**et **A**uthentication **P**lugin
 
 ----
-## what is VNAP?
+## What is VNAP?
 **VNAP** is a plugin for [Rainbow Servers](http://www.project-rainbow.org/) that uses a MariaDB database in order to register new users and login older users. In that way you can protect your server againts account spoofing.
 
 
