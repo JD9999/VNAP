@@ -36,7 +36,7 @@ public class Login implements MC_Command {
 
     @Override
     public String getHelpLine(MC_Player mc_player) {
-        return ChatColor.GOLD + "/login <Contraseña>" + ChatColor.WHITE + " -- Entra en el servidor !";
+        return ChatColor.GOLD + "/login <Pass>" + ChatColor.WHITE + " -- Login into the server";
     }
 
     @Override
@@ -48,7 +48,7 @@ public class Login implements MC_Command {
             final String playerName = mc_player.getName();
 
             if (MyPlugin.inPlayers.contains(playerName)) {
-                mc_player.sendMessage(ChatColor.RED + "Ya te encuentras logueado !");
+                mc_player.sendMessage(ChatColor.RED + "You'r already login!");
                 mc_player.setInvulnerable(false);
                 return;
             }
@@ -58,11 +58,11 @@ public class Login implements MC_Command {
 
             if (authed) {
                 MyPlugin.inPlayers.add(mc_player.getName());
-                mc_player.sendMessage(ChatColor.GREEN + "Bienvenido de vuelta, " + ChatColor.BOLD + playerName
+                mc_player.sendMessage(ChatColor.GREEN + "Welcome back, " + ChatColor.BOLD + playerName
                         + ChatColor.RESET + ChatColor.GREEN + "!");
                 mc_player.setInvulnerable(false);
             } else
-                mc_player.sendMessage(ChatColor.RED + "Usuario o contraseña incorrecta." + ChatColor.RED + " Por favor, intenta nuevamente.");
+                mc_player.sendMessage(ChatColor.RED + "Incorrect user or password. " + ChatColor.RED + "Please, try again");
 
             conn.Close();
         }

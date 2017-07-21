@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="Rainbow">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../Server/Rainbow.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/Rainbow.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

@@ -22,6 +22,7 @@ import org.json.simple.parser.JSONParser;
 
 import java.io.File;
 import java.io.FileReader;
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.UUID;
@@ -38,16 +39,17 @@ public class MyPlugin extends PluginBase {
     public static ArrayList<String> inPlayers = new ArrayList<String>();
 
     private MC_Location playerLocation;
-    private final String fileName = "Config/db.json";
+    private final String fileName = "VNAP/db.json";
     private final String dbModel =
-              "{"
-            + "    \"server_name\": \"your server name\","
-            + "    \"db\": \"db_name_here\","
-            + "    \"user\": \"db_user_here\","
-            + "    \"password\": \"db_password_here\","
-            + "    \"table\": \"db_table_here\""
-            + "}";
+              "{\n"
+            + "    \"server_name\": \"your server name\",\n"
+            + "    \"db\": \"db_name_here\",\n"
+            + "    \"user\": \"db_user_here\",\n"
+            + "    \"password\": \"db_password_here\",\n"
+            + "    \"table\": \"db_table_here\"\n"
+            + "}\n";
     private File jsonFile;
+    private File confDir;
 
     @Override
     public void onStartup(MC_Server server) {
@@ -55,25 +57,39 @@ public class MyPlugin extends PluginBase {
 
         JSONParser parser = new JSONParser();
         jsonFile = new File(fileName);
+        confDir = new File("VNAP");
+
+        if (!confDir.exists()) {
+            System.out.println(" [*] VNAP config dir was not found... Creating.");
+            try {
+                confDir.mkdir();
+            } catch (Exception e) {
+                e.printStackTrace();
+                System.out.println(" [*] Unable to create VNAP config dir.");
+            } finally {
+                System.out.println(" [*] VNAP config dir created successfully");
+            }
+        } else
+            System.out.println(" [*] VNAP config dir found !");
+
+        if (!jsonFile.exists()) {
+            System.out.println(" [*] " + fileName + " was not found... Creating.");
+            PrintWriter pw = null;
+
+            try {
+                pw = new PrintWriter(jsonFile, "UTF-8");
+                pw.write(dbModel);
+                System.out.println(" [*] " + fileName + " created !");
+            } catch (Exception e) {
+                System.out.println(" [*] " + fileName + " could not be created !");
+            } finally {
+                if (pw != null)
+                    pw.close();
+            }
+        } else
+            System.out.println(" [*] " + fileName + " found !");
 
         try {
-            if (!jsonFile.exists()) {
-                System.out.println(" [*] " + fileName + " was not detected... Creating.");
-                PrintWriter pw = null;
-
-                try {
-                    pw = new PrintWriter(jsonFile, "UTF-8");
-                    pw.write(dbModel);
-                    System.out.println(" [*] " + fileName + " created !");
-                } catch (Exception e) {
-                    System.out.println(" [*] " + fileName + " could not be created !");
-                } finally {
-                    if (pw != null)
-                        pw.close();
-                }
-            } else
-                System.out.println(" [*] " + fileName + " detected !");
-
             Object obj = parser.parse(new FileReader(fileName));
             JSONObject jsonObj = (JSONObject)obj;
 
@@ -101,9 +117,9 @@ public class MyPlugin extends PluginBase {
     }
 
     private void printRequestLoginMessage(MC_Player mc_player) {
-        mc_player.sendMessage(ChatColor.RED + "Por favor usa /login Contraseña para iniciar sesión.");
-        mc_player.sendMessage(ChatColor.RED + "¿No tienes una cuenta? Puedes crearla utilizando:");
-        mc_player.sendMessage(ChatColor.RED + "/register Contraseña Contraseña");
+        mc_player.sendMessage(ChatColor.RED + "Please use /login Pass to login");
+        mc_player.sendMessage(ChatColor.RED + "¿Don't have an account? Create it with:");
+        mc_player.sendMessage(ChatColor.RED + "/register Pass Pass");
     }
 
     @Override
@@ -112,14 +128,14 @@ public class MyPlugin extends PluginBase {
 
         Connect conn = new Connect();
         if (conn.CheckIfExists(player.getName()) < 1) {
-            player.sendMessage(ChatColor.RED + "Bienvenido " +
+            player.sendMessage(ChatColor.RED + "Welcome " +
                     ChatColor.BOLD + ChatColor.UNDERLINE + ChatColor.AQUA + player.getName() +
-                    ChatColor.RESET + " a " + serverName + " !");
-            player.sendMessage(ChatColor.RED + "Por favor, usa /register Contraseña Contraseña para crear una cuenta.");
+                    ChatColor.RESET + " to " + serverName + " !");
+            player.sendMessage(ChatColor.RED + "Please, use /register Pass Pass to create an account");
         } else {
-            player.sendMessage(ChatColor.RED + "Bienvenido de nuevo, " + ChatColor.AQUA + ChatColor.BOLD + ChatColor.UNDERLINE +
+            player.sendMessage(ChatColor.RED + "Welcome back, " + ChatColor.AQUA + ChatColor.BOLD + ChatColor.UNDERLINE +
                     player.getName() + ChatColor.RESET + " !");
-            player.sendMessage(ChatColor.RED + "Por favor usa /login Contraseña para iniciar sesión.");
+            player.sendMessage(ChatColor.RED + "Please use /login Pass to login");
         }
 
         player.setInvulnerable(true);
@@ -165,11 +181,6 @@ public class MyPlugin extends PluginBase {
             ei.isCancelled = true;
             printRequestLoginMessage(mc_player);
         }
-    }
-
-    @Override
-    public void onInteracted(MC_Player plr, MC_Location loc, MC_ItemStack isHandItem) {
-        plr.sendMessage(ChatColor.GOLD + "ABRISTE EL INVENTARIO");
     }
 
     @Override

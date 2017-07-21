@@ -36,7 +36,7 @@ public class Register implements MC_Command {
 
     @Override
     public String getHelpLine(MC_Player mc_player) {
-        return ChatColor.GOLD + "/register <Contraseña> <Confirmar contraseña>" + ChatColor.WHITE + " -- Registra tu usuario";
+        return ChatColor.GOLD + "/register <Pass> <Pass>" + ChatColor.WHITE + " -- Register into the server";
     }
 
     @Override
@@ -50,21 +50,21 @@ public class Register implements MC_Command {
             String playerName = mc_player.getName();
 
             if (!firstPassword.equals(confirmedPassword)) {
-                mc_player.sendMessage(ChatColor.RED + "Las contraseñas no coinciden. Intenta de nuevo.");
+                mc_player.sendMessage(ChatColor.RED + "Passwords do not match. Try again");
                 return;
             }
 
             Connect conn = new Connect();
             if (conn.CheckIfExists(playerName) > 0) {
-                mc_player.sendMessage(ChatColor.RED + "Ya te encuentras registrado !");
-                mc_player.sendMessage(ChatColor.RED + "Inicia sesión con /login <Contraseña>");
+                mc_player.sendMessage(ChatColor.RED + "Already registered");
+                mc_player.sendMessage(ChatColor.RED + "Login with /login <Pass>");
             } else {
                 if (!MyPlugin.inPlayers.contains(mc_player.getName())) {
                     conn.RegisterUser(playerName, firstPassword);
                     MyPlugin.inPlayers.add(mc_player.getName());
-                    mc_player.sendMessage(ChatColor.GREEN + "Bienvenido a " + MyPlugin.serverName + " !");
+                    mc_player.sendMessage(ChatColor.GREEN + "Welcome to " + MyPlugin.serverName + " !");
                 } else
-                    mc_player.sendMessage(ChatColor.RED + "Ya te encuentras logueado.");
+                    mc_player.sendMessage(ChatColor.RED + "Already login");
 
                 mc_player.setInvulnerable(false);
             }
