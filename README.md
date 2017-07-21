@@ -1,5 +1,5 @@
 # VNAP
-** V**en **N**et **A**uthentication **P**lugin
+**V**en **N**et **A**uthentication **P**lugin
 
 ----
 ## what is VNAP?
