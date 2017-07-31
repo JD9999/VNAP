@@ -34,8 +34,6 @@ public class Connect {
             Class.forName("org.mariadb.jdbc.Driver");
             conn = DriverManager.getConnection(this.url, this.dbUsrName, this.dbPassword);
             stmt = conn.createStatement();
-        } catch (SQLException se) {
-            se.printStackTrace();
         } catch (Exception e) {
             e.printStackTrace();
         }
